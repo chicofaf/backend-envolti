@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class PersonResource {
@@ -51,6 +54,6 @@ public class PersonResource {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("source")
     public ResponseEntity source() {
-        return ResponseEntity.ok("frontend: https://github.com/chicofaf/frontend-envolti\n");
+        return ResponseEntity.ok(new ArrayList<String>(Arrays.asList("frontend: https://github.com/chicofaf/frontend-envolti","backend: https://github.com/chicofaf/backend-envolti")));
     }
 }
